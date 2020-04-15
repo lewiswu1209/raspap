@@ -12,4 +12,4 @@ else
 fi
 basepath=$(cd $BASE_DIR; pwd)
 
-sed -i '/exit/i\'"$basepath"'/start.sh' /etc/rc.local
+sed -i '/^exit 0/i\'"$basepath"'/start.sh' /etc/rc.local
