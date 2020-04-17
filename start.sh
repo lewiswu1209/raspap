@@ -37,7 +37,7 @@ echo "Starting AP..."
 hostapd -B /etc/hostapd/raspap.conf
 sleep 3
 
-echo "Starting network services..."
+echo "Restarting network services..."
 service dnsmasq start
 sleep 3
 service dhcpcd start

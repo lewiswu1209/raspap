@@ -1,5 +1,15 @@
 #!/bin/bash
 
+echo -e " *******                                 **     ******* "
+echo -e "/**////**                    ******     ****   /**////**"
+echo -e "/**   /**   ******    ******/**///**   **//**  /**   /**"
+echo -e "/*******   //////**  **//// /**  /**  **  //** /******* "
+echo -e "/**///**    ******* //***** /******  **********/**////  "
+echo -e "/**  //**  **////**  /////**/**///  /**//////**/**      "
+echo -e "/**   //**//******** ****** /**     /**     /**/**      "
+echo -e "//     //  //////// //////  //      //      // //       "
+
+echo -e "update && install hostapd & dnsmasq
 apt update
 apt upgrade -y
 apt install hostapd dnsmasq -y
@@ -12,4 +22,7 @@ else
 fi
 basepath=$(cd $BASE_DIR; pwd)
 
+echo -e "make raspap run when boot."
 sed -i '/^exit 0/i\'"$basepath"'/start.sh' /etc/rc.local
+
+echo -e "Install Finished, if you want to change the SSID and key, change it in hostapd.conf."
